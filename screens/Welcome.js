@@ -6,7 +6,7 @@ import {
     ImageBackground,
     TouchableOpacity,
 } from "react-native";
-
+import Sound from "react-native-sound";
 function Welcome(props) {
     const { navigation, route } = props;
     const { navigate, goBack } = navigation;

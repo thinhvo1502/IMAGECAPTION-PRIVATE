@@ -33,12 +33,14 @@ const styles = StyleSheet.create({
     camera: {
       height: '100%',
       width: '100%',
+      
     },
     captureButton: {
       backgroundColor: 'red',
       borderRadius: 50,
       padding: 15,
       marginBottom: 20,
+      
     },
     captureButtonText: {
       color: 'white',
