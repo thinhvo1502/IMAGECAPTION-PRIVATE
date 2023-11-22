@@ -6,10 +6,16 @@ import {
     ImageBackground,
     TouchableOpacity,
 } from "react-native";
-
+import Sound from "react-native-sound";
+import CaptionGenerator from "../assets/CaptionGenerator.mp3"
 function Welcome(props) {
     const { navigation, route } = props;
     const { navigate, goBack } = navigation;
+    const captionGeneratorSound = new Sound('CaptionGenerator', Sound.MAIN_BUNDLE, (error) => {
+        if (error) {
+            console.log('Error loading sound:', error);
+        }
+    });
 
     return (
         <View style={styles.container}>
@@ -22,6 +28,9 @@ function Welcome(props) {
                 <TouchableOpacity
                     style={styles.optionButton}
                     onPress={() => {
+                        // Phát âm thanh khi nút được nhấn
+                        captionGeneratorSound.play();
+
                         navigate('CaptionGenerator');
                     }}
                 >
