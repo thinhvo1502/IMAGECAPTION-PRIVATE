@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Text, View, StyleSheet, TouchableOpacity, AppState } from "react-native";
 import { Camera, useCameraDevice, useCameraPermission ,useCameraFormat,useFrameProcessor} from "react-native-vision-camera";
-import {detectObjects} from "react-native-worklets-core";
+// import {detectObjects} from "react-native-worklets-core";
 import { useIsFocused } from "@react-navigation/native";
 function CaptionGenerator() {
   const { hasPermission, requestPermission } = useCameraPermission();
@@ -48,11 +48,11 @@ function CaptionGenerator() {
     checkPermission();
   }, []);
   // frame processor
-  const frameProcessor = useFrameProcessor((frame) => {
-    'worklet'
-    const objects = detectObjects(frame)
-    console.log(`Detected ${objects.length} objects.`)
-  }, [])
+  // const frameProcessor = useFrameProcessor((frame) => {
+  //   'worklet'
+  //   const objects = detectObjects(frame)
+  //   console.log(Detected ${objects.length} objects.)
+  // }, [])
   return (
     <View style={styles.container}>
       <Camera 
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   captureButton: {
     height: '15%',
     width: '100%',
-    backgroundColor: '#FF00FF',
+    backgroundColor: 'red',
     // borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center'
